@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: Nonparametric-ICA-Python
+Version: 0.0.4
+Summary: A Python implementation of https://github.com/snormanhaignere/nonparametric-ica
+Home-page: https://github.com/dskrill/nonparametric-ica-python.git
+Author: David Skrill
+Author-email: davidmskrill@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/dskrill/nonparametric-ica-python/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # Description
 
 A Python implementation of the nonparametric decomposition described in:
@@ -17,9 +34,9 @@ import numpy as np
 M = 100 # number of features
 N = 10000 # number of measures
 K = 3 # number of components
-R_true = np.random.rand(M,K)
+R_true = np.random.rand((M,K))
 W_true = np.random.exponential(scale = 1, size=(K,N))
-X = R_true@W_true + .01*np.random.normal(M,N)
+X = R_true@W_true + .01*np.random.normal((M,N))
 
 from npica import ICA
 N_RANDOM_INITS = 10
@@ -28,3 +45,4 @@ ica = ICA(K=K,N_RANDOM_INITS=N_RANDOM_INITS,RAND_SEED=RAND_SEED)
 ica.fit(X)
 print(ica.sources)
 ```
+

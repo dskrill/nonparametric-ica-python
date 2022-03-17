@@ -1,1 +1,1 @@
-from nonparametric_ica_python import *
+from .nonparametric_ica_python import *

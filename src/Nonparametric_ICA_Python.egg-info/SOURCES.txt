@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/Nonparametric_ICA_Python.egg-info/PKG-INFO
+src/Nonparametric_ICA_Python.egg-info/SOURCES.txt
+src/Nonparametric_ICA_Python.egg-info/dependency_links.txt
+src/Nonparametric_ICA_Python.egg-info/top_level.txt
+src/npica/__init__.py
+src/npica/nonparametric_ica_python.py
