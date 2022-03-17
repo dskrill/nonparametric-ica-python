@@ -1,10 +1,8 @@
-import torch
 from math import sqrt, ceil, pi
 import numpy as np
 import itertools
 import numpy.matlib
 from numpy.random import RandomState, SeedSequence, MT19937, Generator
-import scipy.io
 
 
 np.seterr(divide='raise')
@@ -152,12 +150,15 @@ class ICA:
         return R, W, negentropy_alliterations, W_alliterations
 
     def fit(self,X):
-        self.Q,self.W_ica, _, __ = self.nonparametric_ica(X)
+        self.mixing,self.sources, self.negentropy_vs_rotation_all_initializations, self.negentropy_vs_rotation_all_initializations = self.nonparametric_ica(X)
 
-    def fit_transform(self,R,W):
-        self.fit(W)
-        return R@self.Q, self.W_ica
-
+    def fit_transform(self,X,R = None):
+        self.fit(X)
+        if R is None:
+            return self.mixing
+        else:
+            return R@self.mixing, self.sources
+        
 
 
 
