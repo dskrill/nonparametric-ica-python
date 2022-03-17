@@ -8,6 +8,14 @@ Also see [the repository for the original implementation.](https://github.com/sn
 
     The algorithm iteratively rotates the top K principal components of the data matrix, X, to maximize a measure of non-Gaussianity ('negentropy'). This procedure is closely related to standard algorithms for independent component analysis, but unlike standard algorithms does not depend on assumptions about the type of non-Gaussian distribution being identified. Because negentropy is estimated with a histogram, the algorithm tends to work well with a large number of data points (~10,000). The run-time of the algorithm increases substantially as the number of components is increased because the optimization is performed via a brute-force search over all pairs of components (run-time is thus proportional nchoosek(K,2) where K is the number of components).
 
+# Install
+
+This package is available on PyPI. Install using pip:
+
+```console
+foo@bar:~$ pip install npica
+```
+
 # Usage
 
 ```python
